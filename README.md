@@ -34,6 +34,7 @@ Navegue até a pasta onde clonou o projeto e execute os seguintes comandos no te
 03 - npm run dev (Esse comando irá executar o projeto e por default estará rodando em: http://localhost:3000 caso nenhuma outra aplicação esteja rodando na porta
 
 ## 📽️ Demonstração
+https://user-images.githubusercontent.com/71707151/211369392-36d73ca7-18a5-40f8-aaab-85e7e93d12c3.mp4
 
 ## 🚀 Tecnologias
 
