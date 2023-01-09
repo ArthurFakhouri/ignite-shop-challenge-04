@@ -19,9 +19,9 @@
 Ignite Shop é um projeto simples de loja de camisetas utilizando Stripe, utilizando NextJS.
 
 <b>Funcionalidades:</b>
-- Você utilizará a listagem já criada pela aplicação, mas adicionará a possibilidade de adicionar aquele item ao carrinho na página do produto.
-- Salvar todos os itens selecionados em sua aplicação, e exibir o número de itens no carrinho
-- Enviar o carrinho que você armazenou na aplicação para a rota de checkout, onde irá gerar a sessão de checkout com os ``line_items`` necessários.
+- Adicionar um item ao carrinho na página específica do produto e também na página de todos os produtos.
+- Salvar todos os itens selecionados na aplicação e exibir o número de itens no carrinho.
+- Enviar ao carrinho o que foi armazenado na aplicação para a rota de checkout, onde irá gerar a sessão de checkout com os ``line_items`` necessários.
 
 
 ## 🔧 Como Executar
