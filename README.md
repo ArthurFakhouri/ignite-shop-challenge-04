@@ -14,6 +14,8 @@
   <a href="#memo-licença">Licença</a>
 </p>
 
+<a target="_blank" href="https://ignite-shop-rose.vercel.app">Demo</a>
+
 ## 🈸 Projeto
 
 Ignite Shop é um projeto simples de loja de camisetas utilizando Stripe, utilizando NextJS.
