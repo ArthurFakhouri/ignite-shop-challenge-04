@@ -7,6 +7,12 @@ export const globalStyles = globalCss({
         boxSizing: 'border-box',
     },
 
+    '@media only screen and (max-width: 768px) ': {
+        html: {
+            fontSize: '87.5%',
+        }
+    },
+
     body: {
         backgroundColor: '$gray900',
         color: '$gray100',

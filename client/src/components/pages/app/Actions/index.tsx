@@ -30,7 +30,7 @@ export function Actions({ id, amount }: ActionsProps) {
 
     return (
         <ActionsContainer>
-            <button
+            <button aria-label="RemoveItem"
                 onClick={() => handleDeleteItem(id)}
                 onMouseLeave={handleDisableActiveDelete}>
                 {!activeDelete ? <Trash size={20} weight="regular" /> : <X size={20} weight="regular" />}

@@ -1,10 +1,14 @@
 import { styled } from "..";
 
 export const ProductContainer = styled('main', {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
+    display: 'flex',
+    justifyContent: 'space-between',
     alignItems: 'stretch', //stretch faz com que as mesmas colunas tenham o msm tamanho verticalmente
     gap: '4rem',
+
+    '@media only screen and (max-width: 768px) ': {
+        flexWrap: 'wrap'
+    },
 
     maxWidth: 1180,
     margin: '0 auto',
@@ -22,6 +26,8 @@ export const ImageContainer = styled('div', {
     alignItems: 'center',
 
     img: {
+        maxWidth: '100%',
+        height: 'auto',
         objectFit: 'cover',
     }
 })

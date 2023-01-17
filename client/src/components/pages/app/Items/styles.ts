@@ -29,6 +29,11 @@ export const ImageContainer = styled('div', {
     background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
     borderRadius: 8,
     width: 110,
+
+    img: {
+        maxWidth: '100%',
+        height: 'auto',
+    }
 })
 
 export const Item = styled('li', {

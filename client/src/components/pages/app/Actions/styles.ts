@@ -3,6 +3,7 @@ import { styled } from "../../../../styles"
 export const ActionsContainer = styled('div', {
     display: 'flex',
     justifyContent: 'space-between',
+    flexWrap: 'wrap',
     marginTop: 'auto',
 
     '& > button': {

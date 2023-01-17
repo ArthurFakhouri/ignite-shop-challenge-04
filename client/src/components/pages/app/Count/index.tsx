@@ -41,7 +41,7 @@ export function Count({ id, amount }: CountProps) {
     return (
         <CountContainer>
             <button onClick={() => handleSetCount(-1)}><Minus size={18} weight="bold" /></button>
-            <input type="text" value={amount} onChange={handleChangeCount} />
+            <input id={`quantity${id}`} type="text" value={amount} onChange={handleChangeCount} />
             <button onClick={() => handleSetCount(1)}> <Plus size={18} weight="bold" /></button>
         </CountContainer >
     )

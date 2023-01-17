@@ -63,7 +63,7 @@ export function Bag() {
                 </div>
                 <button disabled={isCreatingCheckoutSession} onClick={handleBuyProduct}>Finalizar compra</button>
             </Checkout>
-            <CloseBagButton onClick={() => changeAnimation("moveRight")}> <X size={24} weight="regular" /></CloseBagButton >
+            <CloseBagButton aria-label="CloseHandbag" onClick={() => changeAnimation("moveRight")}> <X size={24} weight="regular" /></CloseBagButton >
         </BagContainer >
     )
 }

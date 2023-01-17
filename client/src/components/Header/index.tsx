@@ -23,7 +23,7 @@ export function Header() {
 
     return (
         <HeaderContainer>
-            <Link href="/">
+            <Link href="/" aria-label="HomePage">
                 <Image src={logoImg} alt="" priority />
             </Link>
             <HandbagButton onClick={() => { changeAnimation("moveLeft") }}>

@@ -78,20 +78,29 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
         expand: ['line_items', 'line_items.data.price.product']
     });
 
-    const customerName = session.customer_details.name;
-    const products = session.line_items.data.map(item => {
-        const product = item.price.product as Stripe.Product
-        return {
-            name: product.name,
-            imageUrl: product.images[0],
-            amount: item.quantity
-        }
-    });
+    if (session.customer_details && session.line_items) {
+        const customerName = session.customer_details.name;
+        const products = session.line_items.data.map((item) => {
+            if(!item.price)
+                return;
+            const product = item.price.product as Stripe.Product;
+            return {
+                name: product.name,
+                imageUrl: product.images[0],
+                amount: item.quantity
+            }
+        });
 
+        return {
+            props: {
+                customerName,
+                products
+            }
+        }
+    }
     return {
         props: {
-            customerName,
-            products
+
         }
     }
 }

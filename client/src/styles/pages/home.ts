@@ -8,6 +8,10 @@ export const HomeContainer = styled('main', {
     marginLeft: 'auto',
     maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
     minHeight: 656,
+
+    '@media only screen and (max-width: 600px)': {
+        minHeight: 300,
+    }
 });
 
 export const Product = styled('div', {
@@ -22,7 +26,7 @@ export const Product = styled('div', {
     overflow: 'hidden',
 
     img: {
-        width: 'auto',
+        maxWidth: '100%',
         height: 'auto',
         objectFit: 'cover'
     },

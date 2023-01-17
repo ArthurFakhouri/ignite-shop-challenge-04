@@ -23,7 +23,7 @@ export const BagContainer = styled('div', {
     display: 'flex',
     gap: '2rem',
     flexDirection: 'column',
-    width: 480,
+    maxWidth: 480,
     height: '100%',
     backgroundColor: '$gray800',
     top: 0,
