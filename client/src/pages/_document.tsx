@@ -5,7 +5,7 @@ export default function Document() {
     return (
         <Html>
             <Head>
-                <html lang="en" />
+                <html lang="pt-br" />
                 <meta charSet="utf-8" />
                 <meta name="description" content="Encontre as melhores camisetas da Rocketseat com preços imperdíveis 😱" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
