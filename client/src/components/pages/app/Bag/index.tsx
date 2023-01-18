@@ -10,7 +10,6 @@ export function Bag() {
     const { bag, animation, changeAnimation } = useContext(BagContext);
     const [checkout, setCheckout] = useState({ totalItems: 0, totalToPay: "R$ 0,00" })
 
-
     const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
     const isBagEmpty = bag.length ? false : true;
     const isDisabled = isBagEmpty || isCreatingCheckoutSession ? true : false;

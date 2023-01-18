@@ -106,7 +106,7 @@ export default function Home({ products }: HomeProps) {
           <>
             {currentSlide !== 0 &&
               <Arrow onClick={() => { instanceRef.current?.prev() }} left />}
-            {currentSlide !== (instanceRef.current.track.details.slides.length - 2) &&
+            {currentSlide !== (instanceRef.current.track.details.slides.length - perView) &&
               <Arrow onClick={() => { instanceRef.current?.next() }} />}
           </>
         )}
