@@ -23,6 +23,7 @@ export const BagContainer = styled('div', {
     display: 'flex',
     gap: '2rem',
     flexDirection: 'column',
+    width: '100%',
     maxWidth: 480,
     height: '100%',
     backgroundColor: '$gray800',
@@ -69,9 +70,13 @@ export const Checkout = styled('div', {
         fontWeight: 'bold',
         lineHeight: 1.6,
 
-        '&:hover': {
+        '&:not(:disabled):hover': {
             cursor: 'pointer',
             backgroundColor: '$green500',
+        },
+        '&:disabled': {
+            opacity: .7,
+            cursor: 'not-allowed'
         }
     }
 })

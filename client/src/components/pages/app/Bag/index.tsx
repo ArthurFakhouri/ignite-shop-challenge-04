@@ -10,7 +10,10 @@ export function Bag() {
     const { bag, animation, changeAnimation } = useContext(BagContext);
     const [checkout, setCheckout] = useState({ totalItems: 0, totalToPay: "R$ 0,00" })
 
+
     const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
+    const isBagEmpty = bag.length ? false : true;
+    const isDisabled = isBagEmpty || isCreatingCheckoutSession ? true : false;
 
     useEffect(() => {
         setCheckout(bag.reduce((prvValue, curValue) => {
@@ -29,6 +32,8 @@ export function Bag() {
 
     async function handleBuyProduct() {
         try {
+            if(isDisabled)
+                return;
             setIsCreatingCheckoutSession(true);
             const productsPriceAndAmount = bag.map((item) => {
                 return { price: item.defaultPriceId, quantity: item.amount };
@@ -40,7 +45,7 @@ export function Bag() {
 
             const { checkoutUrl } = response.data;
 
-            window.location.href = checkoutUrl; 
+            window.location.href = checkoutUrl;
         } catch (err) {
             setIsCreatingCheckoutSession(false);
 
@@ -61,7 +66,7 @@ export function Bag() {
                     <span>Valor total</span>
                     <span>{checkout.totalToPay}</span>
                 </div>
-                <button disabled={isCreatingCheckoutSession} onClick={handleBuyProduct}>Finalizar compra</button>
+                <button disabled={isDisabled} onClick={handleBuyProduct}>Finalizar compra</button>
             </Checkout>
             <CloseBagButton aria-label="CloseHandbag" onClick={() => changeAnimation("moveRight")}> <X size={24} weight="regular" /></CloseBagButton >
         </BagContainer >

@@ -7,7 +7,7 @@ import { GetStaticProps } from "next";
 import Stripe from "stripe";
 import Link from "next/link";
 import Head from "next/head";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Handbag } from "phosphor-react";
 import { Arrow } from "../components/pages/home/Arrow";
 import { BagContext } from "../contexts/BagContext";
@@ -27,6 +27,20 @@ interface HomeProps {
 export default function Home({ products }: HomeProps) {
   const { addNewProduct } = useContext(BagContext);
 
+  function screenBps() {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth > 1200)
+        return 3;
+      else if (window.innerWidth > 768)
+        return 2;
+      return 1;
+    }
+    return 3;
+  }
+
+  const [perView, setPerView] = useState(() => {
+    return screenBps();
+  });
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -37,10 +51,20 @@ export default function Home({ products }: HomeProps) {
       setLoaded(true)
     },
     slides: {
-      perView: 2,
+      perView,
       spacing: 48,
     }
   })
+
+  useEffect(() => {
+    function handleResize() {
+      setPerView(screenBps());
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [])
 
   function handleAddProductToBag(event: React.MouseEvent<HTMLButtonElement>, product: Product, amount: number) {
     event.preventDefault();
@@ -56,6 +80,7 @@ export default function Home({ products }: HomeProps) {
   return (
     <>
       <Head>
+        <meta name="description" content="Encontre as melhores camisetas da Rocketseat com preços imperdíveis 😱" />
         <title>Home | Ignite Shop</title>
       </Head>
       <HomeContainer>
